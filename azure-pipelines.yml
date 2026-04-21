@@ -13,6 +13,7 @@ stages:
             script: 'C:\Hannumunnu\DevOps\DevOps\Tools\biome-win32-x64 lint $(System.DefaultWorkingDirectory)'
 
 -   stage: sonarqube
+    condition: always()
     jobs:
       - job: sonarqube
         steps:
