@@ -11,3 +11,15 @@ stages:
           inputs:
             targetType: 'inline'
             script: 'C:\Hannumunnu\DevOps\DevOps\Tools\biome-win32-x64 lint $(System.DefaultWorkingDirectory)'
+
+-   stage: sonarqube
+    jobs:
+      - job: sonarqube
+        steps:
+          - task: PowerShell@2
+            inputs:
+              targetType: 'inline'
+              script: |
+                npm install -g @sonar/scan
+                
+                sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_d4401e53bacd402d5a610f8a734eaf43cb67aa61 -Dsonar.projectKey=hnp-21apr-project
