@@ -1,10 +1,10 @@
 trigger: none 
-pool:agent-hnp
-stages:
-  - stage: scanstage
+pool: agent-hnp
+stages: 
+-   stage: scanstage
     displayName: scan chalega mast wala
     jobs:
-      - job: 
+      - job: scanjob
         steps:
         - task: PowerShell@2
           displayName: biome se karengey lint
