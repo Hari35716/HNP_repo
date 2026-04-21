@@ -23,4 +23,4 @@ stages:
               script: |
                 npm install -g @sonar/scan
                 
-                sonar-scanner -Dsonar.host.url=http://localhost:9000 -D sonar.token=sqp_d4401e53bacd402d5a610f8a734eaf43cb67aa61 -D sonar.projectKey=hnp-21apr-project
+                sonar -D sonar.host.url=http://localhost:9000 -D sonar.token=sqp_d4401e53bacd402d5a610f8a734eaf43cb67aa61 -D sonar.projectKey=hnp-21apr-project
