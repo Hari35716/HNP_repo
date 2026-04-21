@@ -1,8 +1,13 @@
 trigger: none 
-pool: Default
-
-steps: 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'Write-Host "Hello World"'
+pool:agent-hnp
+stages:
+  - stage: scanstage
+    displayName: scan chalega mast wala
+    jobs:
+      - job: 
+        steps:
+        - task: PowerShell@2
+          displayName: biome se karengey lint
+          inputs:
+            targetType: 'inline'
+            script: 'C:\Hannumunnu\DevOps\DevOps\Tools\biome-win32-x64 lint $(System.DefaultWorkingDirectory)'
