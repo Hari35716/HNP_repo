@@ -1,6 +1,8 @@
 trigger: none 
 pool: agent-hnp
-stages: 
+variables: 
+- group: New variable group 21-Apr
+stages:
 -   stage: scanstage
     displayName: scan chalega mast wala
     jobs:
@@ -23,4 +25,4 @@ stages:
               script: |
                 npm install -g @sonar/scan
                 
-                sonar -D sonar.host.url=http://localhost:9000 -D sonar.token=sqp_d4401e53bacd402d5a610f8a734eaf43cb67aa61 -D sonar.projectKey=hnp-21apr-project
+                sonar -D sonar.host.url=http://localhost:9000 -D sonar.token=$(sonar_token) -D sonar.projectKey=hnp-21apr-project
